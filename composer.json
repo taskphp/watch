@@ -1,0 +1,20 @@
+{
+    "name": "task/watch",
+    "description": "Filesystem watching for Task",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Fisher",
+            "email": "mike@mbfisher.com"
+        }
+    ],
+    "require": {
+        "task/plugin": "~1.1",
+        "mbfisher/watch": "~0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Task\\Plugin\\": "src/"
+        }
+    }
+}
