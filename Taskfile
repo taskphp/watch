@@ -1,0 +1,17 @@
+<?php
+
+require 'vendor/autoload.php';
+
+use Task\Plugin\PHPUnitPlugin;
+
+$project = new Task\Project('task/watch');
+
+$project->inject(function ($container) {
+    $container['phpunit'] = new PHPUnitPlugin;
+});
+
+$project->addTask('test', ['phpunit', function ($phpunit) {
+    $phpunit->getCommand()->pipe($this->getOutput());
+}]);
+
+return $project;
