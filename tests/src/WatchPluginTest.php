@@ -16,13 +16,13 @@ class WatchPluginTest extends \PHPUnit_Framework_TestCase
     public function testInitIteratorWatcher()
     {
         $watcher = (new WatchPlugin)->init($this->tmp);
-        $this->assertInstanceOf('mbfisher\Watch\IteratorWatcher', $watcher);
+        $this->assertInstanceOf('mbfisher\Watch\Watcher\IteratorWatcher', $watcher);
     }
 
     public function testInitInotifyWatcher()
     {
         runkit_function_add('inotify_init', '', 'return true;');
         $watcher = (new WatchPlugin)->init($this->tmp);
-        $this->assertInstanceOf('mbfisher\Watch\InotifyWatcher', $watcher);
+        $this->assertInstanceOf('mbfisher\Watch\Watcher\InotifyWatcher', $watcher);
     }
 }
